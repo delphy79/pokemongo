@@ -86,7 +86,7 @@ function response(room, msg, sender, isGroupChat, replier, imageDB) {
   }
   
   if (msg.indexOf("@") == 0) {
-    if (msg.indexOf("미세먼지" == 1)) {
+    if (msg.indexOf("미세먼지") == 1) {
       try {
         //네이버에 대기정보에 대해 가져온 겁니다 뒤에 "%EB%8C" 이부분은 URL로 가져옵니다
         //var u = Utils.getWebText("https://search.naver.com/search.naver sm=tab_hty.top&where=nexearch&query="+msg.substr(6)+"+%EB%8C%80%EA%B8%B0%EC%A0%95%EB%B3%B4%20&o");
