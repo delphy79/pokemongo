@@ -1,4 +1,4 @@
-﻿var preSender = null;
+var preSender = null;
 var preMsg = {};
 var msgCnt = 0;
 
@@ -123,6 +123,7 @@ function response(room, msg, sender, isGroupChat, replier, imageDB) {
       }
       
       replier.reply(nest);*/
+      /*replier.reply("http://pokeweather.azurewebsites.net/Nest");*/
       replier.reply("https://darkrai.synology.me:9999/pokemongo.html");
     }
     
