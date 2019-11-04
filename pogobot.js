@@ -103,6 +103,7 @@ function response(room, msg, sender, isGroupChat, replier, imageDB) {
                     + "\n이산화질소: " + b[7].split("<")[0] + c[5].split("<")[0]
                     + "\n통합대기: " + b[8].split("<")[0] + c[6].split("<")[0];
         replier.reply(dustTxt);
+        return;
       } catch (e) {
         //replier.reply("대기 정보가 없습니다.");
       }
@@ -110,10 +111,12 @@ function response(room, msg, sender, isGroupChat, replier, imageDB) {
     
     if (msg.indexOf("인사드려") == 1 || msg.indexOf("어서오세요") == 1) {
       replier.reply("새로오신분 반갑습니다.\n상단의 공지사항을 숙지 후에 활동 부탁드립니다.\n궁금하신점 있으시면 자유롭게 물어보세요.\n감사합니다. (_ _)");
+      return;
     }
     
     if (msg.indexOf("명령어") == 1) {
       replier.reply("@를 먼저 입력하시고\n레이드 몹\n체육관 명\n둥지\n미세먼지 지역명\n을 입력하시면 포고봇이 친절히 안내해 드립니다.");
+      return;
     }
     
     if (msg.indexOf("둥지") == 1) {
@@ -125,6 +128,12 @@ function response(room, msg, sender, isGroupChat, replier, imageDB) {
       replier.reply(nest);*/
       /*replier.reply("http://pokeweather.azurewebsites.net/Nest");*/
       replier.reply("https://darkrai.synology.me:9999/pokemongo.html");
+      return;
+    }
+    
+    if (msg.indexOf("리서치") == 1) {
+      replier.reply("https://leekduck.com/research/");
+      return;
     }
     
     for (var i=1; i<cpData.length; i++) {
