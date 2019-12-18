@@ -1,5 +1,5 @@
 Utils.delay(function() {
-  setInterval(function() { Api.runFinalization(); }, 3600000);
+  setInterval(function() { Api.runFinalization(); }, 10800000); //3시간 마다 인스턴스의 완전한 소멸 시행
 }, 1000);
 
 var preSender = null;
