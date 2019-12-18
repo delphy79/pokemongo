@@ -38,6 +38,11 @@ var cpData = getRespText("1XwshX9ge1JtEAUrB6ZOqjxKu8DsVwl0k7rQeZq5R2_A"); //CP
 function response(room, msg, sender, isGroupChat, replier, imageDB) {
   msg = msg.trim();
   
+  if (msg == "!@포고봇재시작") {
+    Api.reload();
+    return;
+  }
+  
   if (preSender == sender && preMsg[sender] == msg) {
     msgCnt++;
   }
