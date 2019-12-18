@@ -1,0 +1,187 @@
+This document uses markdown.
+ 
+## Package name
+ 
+[be.zvz.newskbot](https://play.google.com/store/apps/details?id=be.zvz.newskbot)
+ 
+## Engine
+ 
+Rhino 1.7.11 (Unofficial, Compiled by JellBreak)
+ 
+## API
+ 
+> Optimization mode enables to use ES6 syntax.
+[Closure Compiler] (https://developers.google.com/closure/compiler/)
+Example:
+ 
+```javascript
+EventManager.getRegister().registerResponse(function (room: string, message: string, sender: string, isGroupChat: boolean, replier: android.app.Notification.Action, imageDb: ImageDB) {
+
+    if (room === "Kakaotalk roooooooooom" && message === "Hi!”) {
+        replier.reply("Hello, World!");
+        Api.replyRoom(room, “Hello, World! (ReplyRoom)”);
+    }
+});
+```
+ 
+### Api.allClearList()
+ 
+### Api.clearMessageList(): boolean
+ 
+### Api.gc()
+ 
+### Api.getContext(): android.content.Context
+ 
+### Api.getDate(): string
+ 
+### Api.getMessageList(): Array
+ 
+### Api.getRoomList(): Array
+ 
+### Api.getRoomMessageList(room: string): Array
+ 
+### Api.getRoomSenderMessageList(room: string, sender: string): Array
+ 
+### Api.getRootView(): android.view.View
+ 
+### Api.getSenderMessageList(sender: string): Array
+ 
+### Api.getSessionList(): Array
+ 
+### Api.listAllClear()
+ 
+### Api.logger(log: string)
+ 
+### Api.papagoTranslate(source: string, target: string, text: string, debug: boolean): string
+ 
+### Api.reload()
+ 
+### Api.replyRoom(room: string, message: string)
+ 
+### Api.runFinalization()
+ 
+### Api.translate(source: string, target: string, text: string, debug: boolean): string
+ 
+### DateBase.get(key: string)
+ 
+### DateBase.getDBManager(): io.paperdb.Book
+ 
+### DateBase.getRawDataBase(key: string): string
+ 
+### DateBase.removeDataBase(key: string)
+ 
+### DateBase.set(key: string, value: string)
+ 
+### EventManager.getRegister(): be.zvz.newskbot.engine.js.event.EventProvider.Register
+ 
+Example 1 (Recommended):
+ 
+```javascript
+EventManager.getRegister().registerResponse(function (room: string, message: string, sender: string, isGroupChat: boolean, replier: android.app.Notification.Action, imageDb: ImageDB) {
+    Api.replyRoom(room, "Echo: " + message);
+});
+```
+ 
+Example 2:
+ 
+```javascript
+EventManager.getRegister().registerResponse(function (room: string, message: string, sender: string, isGroupChat: boolean, replier: android.app.Notification.Action, imageDb: ImageDB) {
+    Api.replyRoom(room, "Echo: " + message);
+}, "com.kakao.talk");
+```
+ 
+Example 3:
+ 
+```javascript
+EventManager.getRegister().response(function (room: string, message: string, sender: string, isGroupChat: boolean, replier: android.app.Notification.Action, imageDb: ImageDB) {
+    Api.replyRoom(room, "Echo: " + message);
+});
+```
+ 
+Example 4:
+ 
+```javascript
+EventManager.getRegister().response(function (room: string, message: string, sender: string, isGroupChat: boolean, replier: android.app.Notification.Action, imageDb: ImageDB) {
+    Api.replyRoom(room, "Echo: " + message);
+}, "com.kakao.talk");
+```
+ 
+`Register.response` = `Register.registerResponse`
+ 
+### EventManager.getResponseList(): Array
+ 
+### EventManager.getStopEventListenerList(): Array
+ 
+### EventManager.getUnRegister(): be.zvz.newskbot.engine.js.event.EventProvider.Unregister
+ 
+### EventManager.reset()
+ 
+### FastBase64.encode(originalString: string, lineSep: boolean): string
+ 
+### FastBase64.decode(encodedString: string): string
+ 
+### Log.i(log: string)
+ 
+### Log.info(log: string)
+ 
+### Log.d(log: string)
+ 
+### Log.debug(log: string)
+ 
+### Log.e(log: string)
+ 
+### Log.error(log: string)
+ 
+### Log.w(log: string)
+ 
+### Log.warning(log: string)
+ 
+### ScriptBot.send(room: string, message: string)
+ 
+### Utils.delay(function(), ms: number)
+ 
+### Utils.getAndroidVersionCode(): number
+ 
+### Utils.getAndroidVersionName(): string
+ 
+### Utils.getDate(): string
+ 
+### Utils.getKakaoVersionCode(): number
+ 
+### Utils.getKakaoVersionName(): string
+ 
+### Utils.getPhoneBrand(): string
+ 
+### Utils.getPhoneModel(): string
+ 
+### Utils.getRandomString(digit: number): string
+ 
+### Utils.getVersionCode(): number
+ 
+### Utils.getVersionName(): string
+ 
+### Utils.getWebText(url: string, [userAgent: string]): string
+ 
+### Utils.getWebTextWithUserAgent(url: string, userAgent: string): string
+ 
+### Utils.importScript(path: string, name: string)
+ 
+### Utils.isCompatMode(): boolean
+ 
+### Utils.isCompileMode(): boolean
+ 
+### Utils.isLegacyMode(): boolean
+ 
+### Utils.isOptimizationMode(): boolean
+ 
+### Utils.NewDialog(title: string, buttonText: string, view: android.view.View): andorid.app:AlertDialog
+ 
+### Utils.parseToHtml(url: string, option: string, function(data: string, error: java.io.IOException))
+ 
+### Utils.parseToText(url: string, option: string, function(data: string, error: java.io.IOException))
+ 
+### Utils.Thread(function)
+ 
+### Utils.Toast(message: string): android.widget.Toast
+ 
+### Utils.UIThread(function)
