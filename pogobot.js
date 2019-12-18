@@ -1,3 +1,7 @@
+Utils.delay(function() {
+  setInterval(function() { Api.runFinalization(); }, 3600000);
+}, 1000);
+
 var preSender = null;
 var preMsg = {};
 var msgCnt = 0;
