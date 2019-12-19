@@ -1,6 +1,6 @@
-Utils.delay(function() {
+/*Utils.delay(function() {
   setInterval(function() { Api.runFinalization(); }, 10800000); //3시간 마다 인스턴스의 완전한 소멸 시행
-}, 1000);
+}, 1000);*/
 
 var preSender = null;
 var preMsg = {};
@@ -43,6 +43,7 @@ function response(room, msg, sender, isGroupChat, replier, imageDB) {
   msg = msg.trim();
   
   if (msg == "!@봇리부팅") {
+    replier.reply("봇을 재시작합니다.");
     Api.reload();
     return;
   }
